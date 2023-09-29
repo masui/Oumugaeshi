@@ -5,8 +5,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript">
       $(function() {
-	  m = location.href.match(/\?(.*)$/)
-	  $('#text').text(decodeURI(m[1]))
+	  let m = location.href.match(/\?(.*)$/)
+	  let s = decodeURI(m[1])
+	  s = s.replace(/=$/,'')
+	  $('#text').text(s)
       });
     </script>
     <link rel="stylesheet" href="test.css" type="text/css">
