@@ -10,8 +10,11 @@
 	  $('#text').text(s)
 	  // テキストはコピーバッファに入れるべきだが...
 	  // ユーザアクションがないと駄目なんだっけ?
+	  /*
 	  $('#text').select()
 	  document.execCommand("copy")
+	  */
+	  navigator.clipboard.writeText(s)
       });
     </script>
     <style type="text/css">
