@@ -8,6 +8,10 @@
 	  let m = location.href.match(/\?(.*)$/)
 	  let s = decodeURI(m[1]).replace(/=$/,'')
 	  $('#text').text(s)
+	  // テキストはコピーバッファに入れるべきだが...
+	  // ユーザアクションがないと駄目なんだっけ?
+	  $('#text').select()
+	  document.execCommand("copy")
       });
     </script>
     <style type="text/css">
