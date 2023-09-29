@@ -7,13 +7,14 @@
       $(function() {
 	  let m = location.href.match(/\?(.*)$/)
 	  let s = decodeURI(m[1]).replace(/=$/,'')
+	  $('#visibletext').text(s)
 	  $('#text').text(s)
 	  // テキストはコピーバッファに入れるべきだが...
 	  // ユーザアクションがないと駄目なんだっけ?
 	  /*
-	  $('#text').select()
 	  document.execCommand("copy")
 	  */
+          $('#text').select()
 	  navigator.clipboard.writeText(s)
       });
     </script>
@@ -21,12 +22,13 @@
       body {
 	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
-      #text {
+      #visibletext {
 	  font-size: 50px;
       }
     </style>
   </head>
   <body>
-    <span id="text"></span>
+    <input id="text" type="text" value="xxx" hidden readonly  />
+    <span id="visibletext"></span>
   </body>
 </html>
