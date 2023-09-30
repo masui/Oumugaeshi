@@ -5,14 +5,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript">
       $(function() {
-	  let m = location.href.match(/\?(.*)$/)
-	  let s = decodeURI(m[1]).replace(/=$/,'')
-	  $('#text').text(s)
-	  $('#copytext').text(s)
-	  // テキストはコピーバッファに入れるべきだが...
-	  // ユーザアクションがないと駄目なんだっけ?
-          $('#text').select()
-	  navigator.clipboard.writeText(s)
+          let m = location.href.match(/\?(.*)$/)
+          let s = decodeURI(m[1]).replace(/=$/,'')
+          if(s != ''){
+              $('#desc').css('display','none')
+              $('#text').text(s)
+	      $('#copytext').text(s)
+	      // テキストはコピーバッファに入れるべきだが...
+	      // ユーザアクションがないと駄目なんだっけ?
+              $('#text').select()
+              navigator.clipboard.writeText(s)
+          }
       });
     </script>
     <style type="text/css">
@@ -25,6 +28,17 @@
     </style>
   </head>
   <body>
+    <div id="desc">
+      <h1>オウム返し.com</h1>
+
+      <ul>
+	<li>パラメタで渡された文字列を表示し、クリップボードにコピーする「だけ」のサービスです。</li>
+	<li><a href="https://oumugaeshi.com/?文字列">https://oumugaeshi.com/?文字列</a> にアクセスすると「文字列」が表示され、
+	  クリップボードにコピーされます。
+	</li>
+      </ul>
+      
+    </div>
     <input id="copytext" type="text" value="" hidden readonly  />
     <span id="text"></span>
   </body>
