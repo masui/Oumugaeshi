@@ -9,11 +9,8 @@
           let s = decodeURI(m[1]).replace(/=$/,'')
           if(s != ''){
               $('#desc').css('display','none')
-              //$('#text').val(s)
 	      $('#copytext').val(s)
 	      $('#text').text(s)
-	      // テキストはコピーバッファに入れるべきだが...
-              // ユーザアクションがないと駄目なんだっけ?
               $('#copytext').select()
               navigator.clipboard.writeText(s)
           }
@@ -31,17 +28,16 @@
   <body>
     <div id="desc">
       <h1>オウム返し.com</h1>
-
       <ul>
 	<li>パラメタで渡された文字列を表示し、クリップボードにコピーする「だけ」のサービスです。</li>
-	<li><a href="https://oumugaeshi.com/?文字列">https://oumugaeshi.com/?文字列</a>
-	  のようにパラメタを指定してアクセスすると「文字列」が表示され、クリップボードにコピーされます。
+	<li><a href="https://oumugaeshi.com/?文字列">https://oumugaeshi.com/?任意の文字列</a>
+	  のようにパラメタを指定してアクセスすると「任意の文字列」が表示され、クリップボードにコピーされます。
 	</li>
+	<li>このようなURLはブックマークなどで利用することができます。</li>
       </ul>
-      
     </div>
+
     <input id="copytext" type="text" value="" hidden readonly  />
     <span id="text"></span>
-    <!-- <input id="text" type="text" value="" style="border:none;font-size:50px;" readonly  /> -->
   </body>
 </html>
