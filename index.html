@@ -9,13 +9,12 @@
           let s = decodeURI(m[1]).replace(/=$/,'')
           if(s != ''){
               $('#desc').css('display','none')
-              $('#text').val(s)
-              /*
+              //$('#text').val(s)
+	      $('#copytext').val(s)
 	      $('#text').text(s)
 	      // テキストはコピーバッファに入れるべきだが...
               // ユーザアクションがないと駄目なんだっけ?
-              */
-              $('#text').select()
+              $('#copytext').select()
               navigator.clipboard.writeText(s)
           }
       });
@@ -35,17 +34,14 @@
 
       <ul>
 	<li>パラメタで渡された文字列を表示し、クリップボードにコピーする「だけ」のサービスです。</li>
-	<li><a href="https://oumugaeshi.com/?文字列">https://oumugaeshi.com/?文字列</a> にアクセスすると
-	  「文字列」が表示され、クリップボードにコピーされます。
+	<li><a href="https://oumugaeshi.com/?文字列">https://oumugaeshi.com/?文字列</a>
+	  のようにパラメタを指定してアクセスすると「文字列」が表示され、クリップボードにコピーされます。
 	</li>
       </ul>
       
     </div>
-    <!--
-    <input id="copytext2" type="text" value="ABCDE" style="border:none;font-size:50px;" readonly  />
     <input id="copytext" type="text" value="" hidden readonly  />
     <span id="text"></span>
-    -->
-    <input id="text" type="text" value="" style="border:none;font-size:50px;" readonly  />
+    <!-- <input id="text" type="text" value="" style="border:none;font-size:50px;" readonly  /> -->
   </body>
 </html>
