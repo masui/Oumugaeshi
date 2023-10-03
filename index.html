@@ -10,13 +10,15 @@
     <script type="text/javascript">
       $(function() {
           let m = location.href.match(/\?(.*)$/)
-          let s = decodeURI(m[1]).replace(/=$/,'')
-          if(s != ''){
-              $('#desc').css('display','none')
-	      $('#copytext').val(s)
-	      $('#text').text(s)
-              $('#copytext').select()
-              navigator.clipboard.writeText(s)
+	  if(m){
+              let s = decodeURI(m[1]).replace(/=$/,'')
+              if(s != ''){
+                  $('#desc').css('display','none')
+                  $('#copytext').val(s)
+    	          $('#text').text(s)
+                  $('#copytext').select()
+                  navigator.clipboard.writeText(s)
+              }
           }
       });
     </script>
