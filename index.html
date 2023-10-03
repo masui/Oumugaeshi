@@ -13,6 +13,7 @@
 	  if(m){
               let s = decodeURI(m[1]).replace(/=$/,'')
               if(s != ''){
+		  document.title = s
                   $('#desc').css('display','none')
                   $('#copytext').val(s)
     	          $('#text').text(s)
