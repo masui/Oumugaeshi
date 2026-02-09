@@ -7,7 +7,7 @@
 	  // location.replace("/");
 
 	  // let s = location.pathname.replace("/")
-	  let s = location.pathname
+	  let s = location.pathname.replace("/","")
 	  s = decodeURI(s)
 	  document.title = s
 	  $('#copytext').val(s)
