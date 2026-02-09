@@ -2,7 +2,33 @@
   <head>
     <script>
       sessionStorage.redirect = location.pathname;
-      location.replace("/");
+      // location.replace("/");
+
+      document.title = s
+      $('#copytext').val(s)
+      $('#text').text(s)
+      $('#copytext').select()
+      navigator.clipboard.writeText(s)
     </script>
+    <style type="text/css">
+      body {
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      #text {
+	  font-size: 50px;
+	  border:none;
+	  width: 100%;
+	  height: 300;
+      }
+      a:link { color: #0000f0 ; }
+      a:visited { color: #0000f0 ; }
+      a {
+          text-decoration: none;
+      }
+    </style>
   </head>
+  <body>
+    <input id="copytext" type="text" value="" hidden readonly  />
+    <textarea id="text"></textarea>
+  </body>
 </html>
