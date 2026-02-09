@@ -6,7 +6,7 @@
 	  //sessionStorage.redirect = location.pathname;
 	  // location.replace("/");
 
-	  let s = location.pathname.replace("/")
+	  let s = decodeURI(location.pathname.replace("/"))
 	  document.title = s
 	  $('#copytext').val(s)
 	  $('#text').text(s)
