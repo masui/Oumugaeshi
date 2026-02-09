@@ -12,6 +12,7 @@
 	  const path = sessionStorage.redirect || location.pathname;
 	  sessionStorage.removeItem("redirect");
 	  console.log(path); // "/abc"
+	  alert(path);
 	  
           let m = location.href.match(/\?(.*)$/)
 	  if(m){
