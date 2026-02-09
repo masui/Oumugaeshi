@@ -1,14 +1,16 @@
 <html>
   <head>
     <script>
-      sessionStorage.redirect = location.pathname;
-      // location.replace("/");
+      $(function() {
+	  //sessionStorage.redirect = location.pathname;
+	  // location.replace("/");
 
-      document.title = s
-      $('#copytext').val(s)
-      $('#text').text(s)
-      $('#copytext').select()
-      navigator.clipboard.writeText(s)
+	  document.title = s
+	  $('#copytext').val(s)
+	  $('#text').text(s)
+	  $('#copytext').select()
+	  navigator.clipboard.writeText(s)
+      });
     </script>
     <style type="text/css">
       body {
